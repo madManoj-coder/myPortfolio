@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <div class="logo">
+        <a routerLink="/">Portfolio</a>
+      </div>
+      
+      <div class="nav-links" [class.active]="isMenuOpen">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+        <a routerLink="/skills" routerLinkActive="active">Skills</a>
+        <a routerLink="/projects" routerLinkActive="active">Projects</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </div>
+      
+      <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>

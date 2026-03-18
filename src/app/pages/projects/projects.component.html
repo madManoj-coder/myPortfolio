@@ -1,0 +1,79 @@
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">My Projects</h1>
+    
+    <div class="projects-intro">
+      <div class="card">
+        <p>
+          Here's a collection of projects I've worked on, showcasing my skills in frontend development, 
+          UI/UX design, and problem-solving. Each project represents a unique challenge and learning experience.
+        </p>
+      </div>
+    </div>
+    
+    <div class="filter-buttons">
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'all'"
+        (click)="filterProjects('all')">
+        All Projects
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'featured'"
+        (click)="filterProjects('featured')">
+        Featured
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'angular'"
+        (click)="filterProjects('angular')">
+        Angular
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="activeFilter === 'react'"
+        (click)="filterProjects('react')">
+        React
+      </button>
+    </div>
+    
+    <div class="projects-grid">
+      <div *ngFor="let project of filteredProjects" class="project-card card">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a [href]="project.liveUrl" class="project-link" target="_blank">
+                <span>Live Demo</span>
+              </a>
+              <a [href]="project.githubUrl" class="project-link" target="_blank">
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+          <div *ngIf="project.featured" class="featured-badge">Featured</div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-technologies">
+            <span *ngFor="let tech of project.technologies" class="tech-tag">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <div class="card">
+        <h2>Interested in Working Together?</h2>
+        <p>I'm always open to discussing new opportunities and exciting projects.</p>
+        <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>

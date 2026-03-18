@@ -1,0 +1,67 @@
+<section class="section">
+  <div class="container">
+    <h1 class="section-title">Skills & Expertise</h1>
+    
+    <div class="skills-intro">
+      <div class="card">
+        <p>
+          I'm passionate about staying current with the latest technologies and continuously 
+          improving my skills. Here's an overview of my technical expertise and the tools 
+          I use to create amazing digital experiences.
+        </p>
+      </div>
+    </div>
+    
+    <div class="skills-content">
+      <div class="technical-skills">
+        <h2 class="subsection-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div *ngFor="let skill of technicalSkills" class="skill-item card">
+            <div class="skill-header">
+              <h3>{{ skill.name }}</h3>
+              <span class="skill-category">{{ skill.category }}</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+            <div class="skill-percentage">{{ skill.level }}%</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="soft-skills">
+        <h2 class="subsection-title">Soft Skills</h2>
+        <div class="soft-skills-grid">
+          <div *ngFor="let skill of softSkills" class="soft-skill-item card">
+            <div class="skill-icon">✨</div>
+            <h3>{{ skill }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="certifications">
+      <h2 class="subsection-title">Certifications & Learning</h2>
+      <div class="cert-grid">
+        <div class="cert-item card">
+          <div class="cert-icon">🏆</div>
+          <h3>Angular Certified Developer</h3>
+          <p>Google Developers Certification</p>
+          <span class="cert-year">2023</span>
+        </div>
+        <div class="cert-item card">
+          <div class="cert-icon">📜</div>
+          <h3>JavaScript Algorithms</h3>
+          <p>FreeCodeCamp Certification</p>
+          <span class="cert-year">2022</span>
+        </div>
+        <div class="cert-item card">
+          <div class="cert-icon">🎨</div>
+          <h3>UI/UX Design Principles</h3>
+          <p>Coursera Specialization</p>
+          <span class="cert-year">2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
